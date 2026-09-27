@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: notificationsapi 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: notificationsapi
+  template:
+    metadata:
+      labels:
+        app: notificationsapi 
+    spec:
+      containers:
+        - name: notificationsapi 
+          image: fiaptechchallenge.azurecr.io/notificationsapi
+          ports:
+          - containerPort: 8080
